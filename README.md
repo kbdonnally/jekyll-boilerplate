@@ -14,6 +14,7 @@
 10. Travis, if can get to work...
 11. Annotated directory structure
 12. Basic custom theme
+13. Docs
 
 ## Handling out of order:
 
@@ -24,3 +25,7 @@
 - Anyway, Jekyll has some [excellent documentation](https://jekyllrb.com/docs/continuous-integration/travis-ci/) on how to set up this magic, so return to it when you have more things that this will actually be, like, useful for.
 
 *Marking for later review.*
+
+### #3: `.gitignore`
+
+- Handled! Compatible with any site like your patterns repo or the SLab site.
