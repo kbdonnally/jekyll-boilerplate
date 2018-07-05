@@ -1,11 +1,15 @@
 // gulpfile.js
 
 // require modules:
-var gulp   = require('gulp'),
-	clean  = require('gulp-clean'),
-	concat = require('gulp-concat'),
-	uglify = require('gulp-uglify-es').default,
-	insert = require('gulp-insert');
+var gulp 		 = require('gulp'),
+	clean 		 = require('gulp-clean'),
+	concat 		 = require('gulp-concat'),
+	uglify 		 = require('gulp-uglify-es').default,
+	insert 		 = require('gulp-insert');
+	sass 		 = require('gulp-sass'),
+	autoprefixer = require('gulp-autoprefixer'),
+	replace 	 = require('gulp-replace'),
+	paths 		 = require('./_assets/gulp_config/paths');
 
 var js_format = () => {
 	return gulp.src('./assets/js/_partials/*.js')
@@ -28,9 +32,7 @@ gulp.task('js', gulp.series('js_clean', 'js_watch'));
 
 // CSS:
 
-var sass = require('gulp-sass'),
-	autoprefixer = require('gulp-autoprefixer'),
-	replace = require('gulp-replace');
+
 
 var css_format = () => {
 	return gulp.src('./assets/css/style.scss')
