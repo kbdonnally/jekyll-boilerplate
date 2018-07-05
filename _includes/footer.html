@@ -1,0 +1,71 @@
+<footer class="footer-wrapper">
+  <div class="footer-main-grid">
+
+    <div class="footer__to-top">
+        <a href="#main" aria-label="Back to top">
+          <img src="{{ '/assets/img/svg/thin-up-arrow-white.svg' | relative_url }}" alt="Up arrow">
+          <span>Back<br/>to top</span>
+        </a>
+    </div>
+
+    <div class="footer__sitemap">
+      <div class="footer-map__title">Explore</div>
+      <div class="footer-map__links">
+        <a href="{{ site.url }}">Home</a>
+        <a href="{{ site.url }}/about">About</a>
+        <a href="{{ site.url }}/hours-and-spaces">Hours & Spaces</a>
+        <a href="{{ site.url }}/events">Events</a>
+      </div>
+    </div>
+
+    <div class="footer__connect">
+      <div class="footer-connect__title">Connect</div>
+      <div class="footer-connect__social">
+        <a href="https://www.facebook.com/scholarslab/">
+          <img src="{{ '/assets/img/svg/facebook-white.svg' | relative_url }}" alt="Facebook icon">
+          <span>Facebook</span>
+        </a>
+        <a href="https://twitter.com/scholarslab">
+          <img src="{{ '/assets/img/svg/twitter-white.svg' | relative_url }}" alt="Twitter icon">
+          <span>Twitter</span>
+        </a>
+        <a href="https://github.com/scholarslab">
+          <img src="{{ '/assets/img/svg/github-white.svg' | relative_url }}" alt="Github icon">
+          <span>Github</span>
+        </a>
+        <a href="mailto:scholarslab@virginia.edu">
+          <img src="{{ '/assets/img/svg/envelope-outline-white.svg' | relative_url }}" alt="Email icon">
+          <span>Email us</span>
+        </a>
+      </div>
+      <!--div class="footer-connect__news">
+        <div class="footer-news__title">Newsletter</div>
+        <div class="footer-news__modal"><!-- icon wrapped in JS trigger for newsletter modal to come up -></div>
+      </div-->
+    </div>
+
+    <div class="footer__contact">
+      <div class="footer-contact__title">Contact</div>
+      <div class="footer-contact__email"><span>Email:</span><a href="mailto:scholarslab@virginia.edu">scholarslab@virginia.edu</a></div>
+      <div class="footer-contact__address"><span>Address:</span>P.O. Box 400109<br/>Charlottesville, VA<br/>22904-4129</div>
+      <div class="footer-contact__phone"><span>Phone:</span>434-243-8800</div>
+    </div>
+
+    <div class="footer__logos">
+      <a class="footer-logo__slab" href="{{ site.url }}" aria-label="Scholars' Lab home">
+        {% include nav-logo.html %}
+      </a>
+      <a class="footer-logo__uva" href="https://www.library.virginia.edu/" aria-label="UVA Library home">
+        <img src="{{ '/assets/img/svg/uva-library-text-block-white.svg' | relative_url }}" alt="UVA Library logo">
+      </a>
+      <a class="footer-logo__license" rel="license" href="http://creativecommons.org/licenses/by/4.0/" aria-label="Creative Commons License">
+        <img alt="Creative Commons License" style="border-width:0" src="https://mirrors.creativecommons.org/presskit/buttons/80x15/svg/by.svg"/>
+      </a>
+    </div>
+
+  </div>
+
+  {% if jekyll.environment == 'production' and site.analytics %}
+  {{ include analytics.html }}
+  {% endif %}
+</footer>
