@@ -1,0 +1,22 @@
+{
+  "name": "jekyll-boilerplate",
+  "version": "1.0.0",
+  "description": "Custom setup for Jekyll-based sites.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kbdonnally/jekyll-boilerplate.git"
+  },
+  "author": "kbdonnally <kbd3ax@virginia.edu>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kbdonnally/jekyll-boilerplate/issues"
+  },
+  "homepage": "https://github.com/kbdonnally/jekyll-boilerplate#readme"
+}
