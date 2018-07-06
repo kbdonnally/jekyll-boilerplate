@@ -10,3 +10,5 @@
 	- That resulted in way *less* organized issues, which defeats the purpose!
 - Anyway, since there are now a fair number of files defining "meta"-documentation (docs on how to participate in the code), I figured that made more sense to live in the `.github/` folder, which is where GitHub puts these things by default.
 	- That way, this folder is just full of stuff that's meant for humans to actually read. :)
+
+**NB:** [Awesome GitHub gist](https://gist.github.com/ryanflorence/daafb1e3cb8ad740b346) of generic folder structure & explanation. Have been looking for something like this for a while. (Also has good depiction of deeply-nested ASCII structure diagram!)
