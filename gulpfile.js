@@ -11,52 +11,64 @@ var gulp 		 = require('gulp'),
 	replace 	 = require('gulp-replace'),
 	paths 		 = require('./_assets/gulp_config/paths');
 
-var js_format = () => {
-	return gulp.src('./assets/js/_partials/*.js')
+
+// --------------------------------------------------
+// 				 Tasks: JavaScript
+// --------------------------------------------------
+
+// concatenate + minify + wrap in IIFE
+var js_main_format = () => {
+	return gulp.src('_assets/js/_partials/*.js')
 		.pipe(concat('main.js'))
 		.pipe(uglify({ keep_fnames: true }))
 		.pipe(insert.wrap('(function() {', '\n})();'))
-		.pipe(gulp.dest('./assets/js'));
+		.pipe(gulp.dest('_site/assets/js'))
+		.pipe(gulp.dest('assets/js'));
 }
 
-gulp.task('js_watch', () => {
-	return gulp.watch('./assets/js/_partials/*.js', js_format);
+// watch -> change -> format
+gulp.task('js_main_watch', () => {
+	return gulp.watch('_assets/js/_partials/*.js', js_main_format);
 });
 
-gulp.task('js_clean', () => {
-	return gulp.src('./assets/js/main.js', { allowEmpty: true })
+// delete compiled file -> start over
+gulp.task('js_main_clean', () => {
+	return gulp.src('assets/js/main.js', { allowEmpty: true })
 		.pipe(clean());
 });
 
-gulp.task('js', gulp.series('js_clean', 'js_watch'));
+// clear compiled JS -> rewrite whenever JS partial changes
+gulp.task('js_main', gulp.series('js_main_clean', 'js_main_watch'));
 
-// CSS:
+// --------------------------------------------------
+// 					Tasks: CSS
+// --------------------------------------------------
 
-
-
-var css_format = () => {
-	return gulp.src('./assets/css/style.scss')
-		.pipe(replace("---", "/* remove Jekyll frontmatter */"))
+// compile + minify + autoprefix
+var css_main_format = () => {
+	return gulp.src('_assets/css/style.scss')
 		.pipe(sass({
-            includePaths: ['./assets/css/_sass'],
-            outputStyle: 'compressed'
-        }).on('error', sass.logError))
-        .pipe(autoprefixer({
-        	browsers: ['last 2 versions'],
-        	grid: true
-        }))
-		.pipe(gulp.dest('./assets/css'))
-		.pipe(gulp.dest('./_site/assets/css'));
-
+			includePaths: ['./_assets/css/_sass'],
+			outputStyle: 'compressed'
+		}).on('error', sass.logError))
+		.pipe(autoprefixer({
+			browsers: ['last 2 versions'],
+			grid: true
+		}))
+		.pipe(gulp.dest('_site/assets/css'))
+		.pipe(gulp.dest('assets/css'))
 };
 
-gulp.task('css_watch', () => {
-	return gulp.watch('./assets/css/_sass/*.scss', css_format);
+// watch -> change -> format
+gulp.task('css_main_watch', () => {
+	return gulp.watch('_assets/css/_sass/*.scss', css_main_format);
 });
 
-gulp.task('css_clean', () => {
-	return gulp.src('./assets/css/test/style.?(s)css', { allowEmpty: true })
+// delete compiled file -> start over
+gulp.task('css_main_clean', () => {
+	return gulp.src('assets/css/style.css', { allowEmpty: true })
 		.pipe(clean());
 });
 
-gulp.task('css', gulp.series('css_clean', 'css_watch'));
+// clear compiled folder -> rewrite when SCSS partials change
+gulp.task('css_main', gulp.series('css_main_clean', 'css_main_watch'));
