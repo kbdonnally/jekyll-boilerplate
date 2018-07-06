@@ -1,6 +1,8 @@
 [![Build Status](https://travis-ci.org/kbdonnally/jekyll-boilerplate?branch=master)](https://travis-ci.org/kbdonnally/jekyll-boilerplate)
 # Jekyll Boilerplate 
 
+*Literally just editing to trigger a build.*
+
 ## What I want set up:
 
 1. Config
