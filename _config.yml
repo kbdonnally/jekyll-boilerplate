@@ -25,11 +25,13 @@ exclude:
 
 collections_dir: collections
 # example setup
-collections:
+# collections:
 #  people:
 #    output: true
 #    permalink: /:collection/:slug/
 
+plugins:
+   - jekyll-feed
 
 defaults:
   - scope:
