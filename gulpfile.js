@@ -1,6 +1,9 @@
 // gulpfile.js
 
-// require modules:
+// --------------------------------------------------
+// 				 Import modules:
+// --------------------------------------------------
+
 var gulp 		 = require('gulp'),
 	clean 		 = require('gulp-clean'),
 	concat 		 = require('gulp-concat'),
