@@ -101,3 +101,9 @@ gulp.task('img_all_clean', () => {
 
 // clear site-read folder -> rewrite when images change
 gulp.task('img_all', gulp.series('img_all_clean', 'img_all_watch'));
+
+// --------------------------------------------------
+// 			  Tasks: Build main assets
+// --------------------------------------------------
+
+gulp.task('assets_main', gulp.parallel('js_main', 'css_main', 'img_all'));
