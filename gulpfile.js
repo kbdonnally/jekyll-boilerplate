@@ -72,3 +72,29 @@ gulp.task('css_main_clean', () => {
 
 // clear compiled folder -> rewrite when SCSS partials change
 gulp.task('css_main', gulp.series('css_main_clean', 'css_main_watch'));
+
+// --------------------------------------------------
+// 					Tasks: Images
+// --------------------------------------------------
+
+// not processing the images rn, so just
+// passing them to the right directory
+var img_all_format = () => {
+	return gulp.src(paths.imgSrc)
+		.pipe(gulp.dest('_site/assets/img'))
+		.pipe(gulp.dest('assets/img'));
+};
+
+// watch -> change -> send files
+gulp.task('img_all_watch', () => {
+	return gulp.watch(paths.imgSrc, img_all_format);
+});
+
+// delete folder the site reads
+gulp.task('img_all_clean', () => {
+	return gulp.src('assets/img', { allowEmpty: true })
+		.pipe(clean());
+});
+
+// clear site-read folder -> rewrite when images change
+gulp.task('img_all', gulp.series('img_all_clean', 'img_all_watch'));
