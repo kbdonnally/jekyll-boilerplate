@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/kbdonnally/jekyll-boilerplate?branch=master)](https://travis-ci.org/kbdonnally/jekyll-boilerplate)
 # Jekyll Boilerplate 
 
 ## What I want set up:
