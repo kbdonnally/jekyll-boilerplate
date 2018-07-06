@@ -1,5 +1,5 @@
 ---
-layout: page-text
+layout: page
 permalink: /page/
 title: Page Default Appearance
 ---
