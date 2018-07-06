@@ -12,6 +12,9 @@ permalink: /:year/:month/:day/:title/
 incremental: true
 markdown: kramdown
 
+sass:
+  sass_dir: assets/css
+
 exclude:
   - Gemfile
   - Gemfile.lock
