@@ -64,7 +64,7 @@ var css_main_format = () => {
 
 // watch -> change -> format
 gulp.task('css_main_watch', () => {
-	return gulp.watch('_assets/css/_sass/*.scss', css_main_format);
+	return gulp.watch('_assets/css/**/*.scss', css_main_format);
 });
 
 // delete compiled file -> start over
