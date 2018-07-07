@@ -44,7 +44,7 @@ end
 
 desc "Run travis tests"
 task :test_travis do
-    sh 'bundle exec jekyll build ./_site/jekyll-boilerplate'
+    sh 'bundle exec jekyll build ./_site'
     options = {
       :assume_extension => true,
       :disable_external => true,
@@ -58,7 +58,7 @@ task :test_travis do
     #   :url_swap =>
   }
 
-  HTMLProofer.check_directory("./_site/jekyll-boilerplate", options).run
+  HTMLProofer.check_directory("./_site", options).run
   sh 'bundle exec jekyll serve --incremental'
 end
 

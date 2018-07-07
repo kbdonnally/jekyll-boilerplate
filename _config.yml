@@ -2,8 +2,8 @@ email: kbd3ax@virginia.edu
 description: >- # this means to ignore newlines until "baseurl:"
   Custom setup for Jekyll-based sites. Provides modified directory
   structures, Gulp-based asset processing, and a custom theme.
-baseurl: "/jekyll-boilerplate" # the subpath of your site, e.g. /blog
-url: "localhost:4000" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://setup.katherinedonnally.design" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: kbdonnally
 github_username:  kbdonnally
 permalink: /:year/:month/:day/:title/
