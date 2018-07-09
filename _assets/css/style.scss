@@ -21,23 +21,9 @@ main {
 /* Partials: */
 
 @import "_colors/slab-palette";
+@import "_colors/patterns-palette";
 @import "universal-styles";
 @import "home";
 @import "navbar";
 @import "page";
-// @import "amanda";
-@import "logos";
-@import "makerspace";
 @import "footer";
-@import "text";
-@import "fellowship";
-@import "research";
-@import "progress-tracker"; // only include pre-v1.0.0
-@import "blog-post";
-@import "person";
-@import "people";
-@import "events";
-@import "event";
-@import "blog";
-@import "spatial-tech";
-@import "research-project";
