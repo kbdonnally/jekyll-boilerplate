@@ -1,0 +1,12 @@
+/* Styles to augment Markdown: */
+
+.gulp-wf__screenshot {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	img {
+		display: inline-block;
+		max-width: 900px;
+	}
+}

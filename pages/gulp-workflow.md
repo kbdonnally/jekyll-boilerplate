@@ -256,51 +256,10 @@ assets/
 2. There are fewer files overall.
 3. The file structure is mostly the same, and the contents of the image directory didn't change at all.
 
-### Goals, in English
+### What's happening, in English
 
-Instead of going over a bunch of code right now, I'm going to write out my intents.
+An export from Adobe Draw, marking up a simplified version of our starting `_assets` folder:
 
-- Simplified:
-
-{:.lang-markup}
-```
-_assets/
-+---css/
-|   |   style.scss
-|   |
-|   +---lib/
-|   |       prism.css
-|   |       prism.min.css
-|   |
-|   \---_sass/
-|       |   _footer.scss
-|       |   _home.scss
-|       |   _navbar.scss
-|       |   _page.scss
-|       |   _universal-styles.scss
-|       |
-|       +---_colors/
-|               _patterns-palette.scss
-|               _slab-palette.scss
-|
-+---img/
-|   +---decorative/
-|   |       color-splatter-purple.jpg
-|   |
-|   \---svg/
-|           asterisk-white.svg
-|           calendar-icon.svg
-|
-\---js/
-    +---lib/
-    |       hammer.min.js
-    |       prism.js
-    |       prism.min.js
-    |
-    \---_partials/
-            _blog-post.js
-            _flexible-nav.js
-            _hours-and-spaces.js
-            _progress-tracker.js
-            _research.js
-```
+<div class="gulp-wf__screenshot">
+	<img src="{{ 'assets/img/gulp-markup-cropped.png' | relative_url }}" alt="Screenshot of how Gulp tasks transform files">
+</div>
