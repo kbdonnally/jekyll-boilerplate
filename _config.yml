@@ -16,9 +16,11 @@ sass:
   sass_dir: assets/css
 
 exclude:
+  - _assets
   - Gemfile
   - Gemfile.lock
   - gulpfile.js
+  - tree.txt
   - docs
   - node_modules
   - vendor
