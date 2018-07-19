@@ -256,10 +256,61 @@ assets/
 2. There are fewer files overall.
 3. The file structure is mostly the same, and the contents of the image directory didn't change at all.
 
-### What's happening, in English
+### Diagram:
 
 An export from Adobe Draw, marking up a simplified version of our starting `_assets` folder:
 
 <div class="gulp-wf__screenshot">
 	<img src="{{ 'assets/img/gulp-markup-cropped.png' | relative_url }}" alt="Screenshot of how Gulp tasks transform files">
 </div>
+
+## How files are processed:
+
+### 1. Styles
+
+This includes both SCSS files and any plain CSS files you might have from external libraries (e.g. syntax highlighting&mdash;in this project, we're using Prism).
+
+#### Remove YAML
+
+{.lang-markup}
+- Jekyll knows to process a file if it starts with YAML frontmatter.
+- We only want this on our main stylesheet, `style.scss`, since we're importing all remaining stylesheets into this document.
+
+Setup if we *weren't* Gulp-ifying the process:
+
+{.lang-sass}
+```
+---
+# YAML front matter strings! (Nothing required inside.)
+---
+
+/* General Styles: */
+
+* {
+  box-sizing: border-box;
+}
+
+// ... and so on ...
+```
+
+So, now that we *are* using Gulp, we'll take the mind-blowing step of... *removing the front matter!* Or, if you're me, just commenting it out until you're sure we're using this workflow. Result:
+
+{.lang-sass}
+```
+// ---
+// ---
+
+/* General Styles: */
+
+* {
+  box-sizing: border-box;
+}
+
+// ... and so on ...
+```
+
+Boom. Done. Now Gulp will process the SCSS file for you, but you won't forget that Jekyll needs the YAML front matter and wonder why you're getting an error, should you decide against this method.
+
+## 2. JavaScripts:
+
+*coming soon...*
