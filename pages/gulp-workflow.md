@@ -272,13 +272,13 @@ This includes both SCSS files and any plain CSS files you might have from extern
 
 #### Remove YAML
 
-{.lang-markup}
+{:.lang-markup}
 - Jekyll knows to process a file if it starts with YAML frontmatter.
 - We only want this on our main stylesheet, `style.scss`, since we're importing all remaining stylesheets into this document.
 
 Setup if we *weren't* Gulp-ifying the process:
 
-{.lang-sass}
+{:.lang-scss}
 ```
 ---
 # YAML front matter strings! (Nothing required inside.)
@@ -295,7 +295,7 @@ Setup if we *weren't* Gulp-ifying the process:
 
 So, now that we *are* using Gulp, we'll take the mind-blowing step of... *removing the front matter!* Or, if you're me, just commenting it out until you're sure we're using this workflow. Result:
 
-{.lang-sass}
+{:.lang-scss}
 ```
 // ---
 // ---
@@ -311,6 +311,6 @@ So, now that we *are* using Gulp, we'll take the mind-blowing step of... *removi
 
 Boom. Done. Now Gulp will process the SCSS file for you, but you won't forget that Jekyll needs the YAML front matter and wonder why you're getting an error, should you decide against this method.
 
-## 2. JavaScripts:
+### 2. JavaScripts:
 
 *coming soon...*
